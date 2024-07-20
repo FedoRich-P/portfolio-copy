@@ -19,6 +19,7 @@ export function Main() {
 }
 
 const MainSection = styled.section`
+  padding: 0 30px;
   min-height: 100vh;
   background-color: rgba(31, 31, 32, 1);
 `;
