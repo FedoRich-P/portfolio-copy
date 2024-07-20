@@ -28,6 +28,9 @@ const StyledList = styled.ul`
   list-style: none;
 
   a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 25px;
@@ -43,19 +46,3 @@ const StyledList = styled.ul`
     }
   }
 `;
-
-/* <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Skills</a>
-          </li>
-          <li>
-            <a href="#">Works</a>
-          </li>
-          <li>
-            <a href="#">Testimony</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li> */
