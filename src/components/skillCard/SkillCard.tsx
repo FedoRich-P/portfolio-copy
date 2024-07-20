@@ -45,6 +45,9 @@ const SkillCardIcon = styled.span`
   margin-bottom: 40px;
   width: 80px;
   height: 80px;
+  svg {
+    /* transform: translate(3px, 8px); */
+  }
   &::before {
     content: '';
     position: absolute;
@@ -53,7 +56,7 @@ const SkillCardIcon = styled.span`
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.1);
-    transform: rotate(-45deg) translateY(-9px) translateX(9px);
+    transform: rotate(-45deg) translateY(-14px) translateX(13px);
   }
 `;
 const SkillCardTitle = styled.h3`

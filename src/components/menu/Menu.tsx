@@ -2,26 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { FlexWrapper } from '../FlexWrapper';
 
-export function Menu() {
+type MenuPropsType = {
+  arr: Array<string>;
+};
+
+export function Menu(props: MenuPropsType) {
   return (
     <>
       <nav>
         <FlexWrapper as={StyledList} columnGap="15px" wrap="wrap">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Skills</a>
-          </li>
-          <li>
-            <a href="#">Works</a>
-          </li>
-          <li>
-            <a href="#">Testimony</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
+          {props.arr.map((el, i) => {
+            return (
+              <li key={i}>
+                <a href="#">{el}</a>
+              </li>
+            );
+          })}
         </FlexWrapper>
       </nav>
     </>
@@ -33,6 +29,7 @@ const StyledList = styled.ul`
 
   a {
     text-decoration: none;
+    text-transform: uppercase;
     font-size: 25px;
     font-weight: 400;
     line-height: 55px;
@@ -46,3 +43,19 @@ const StyledList = styled.ul`
     }
   }
 `;
+
+/* <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Skills</a>
+          </li>
+          <li>
+            <a href="#">Works</a>
+          </li>
+          <li>
+            <a href="#">Testimony</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li> */

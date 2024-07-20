@@ -12,6 +12,7 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 5px;
+  text-align: center;
   color: rgba(255, 255, 255, 1);
 
   &::after {
