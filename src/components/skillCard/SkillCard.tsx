@@ -33,7 +33,9 @@ const SkillCardList = styled.ul`
 const SkillCardItem = styled.li`
   padding: 20px;
   padding-top: 40px;
-  width: 26%;
+  /* width: 26%; */
+  max-width: 338px;
+  width: 100%;
   min-height: 338px;
   color: rgba(255, 255, 255, 1);
 `;
