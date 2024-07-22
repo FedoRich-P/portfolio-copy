@@ -60,6 +60,7 @@ const FooterList = styled.ul`
   column-gap: 20px;
 `;
 const FooterItem = styled.li``;
+
 const FooterLink = styled.a`
   display: inline-flex;
   justify-content: center;

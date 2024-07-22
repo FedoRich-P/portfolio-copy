@@ -13,7 +13,7 @@ export function SkillCard(props: SkillCardPropsType) {
     <FlexWrapper as={SkillCardList} wrap="wrap">
       {props.iconArray.map((el, i) => (
         <SkillCardItem key={i}>
-          <SkillCardIcon>
+          <SkillCardIcon as={FlexWrapper}>
             <Icon iconId={el}></Icon>
           </SkillCardIcon>
           <SkillCardTitle>{props.titleArray[i]}</SkillCardTitle>
@@ -27,49 +27,38 @@ export function SkillCard(props: SkillCardPropsType) {
   );
 }
 
-const SkillCardList = styled.ul`
-  width: 79%;
-`;
+const SkillCardList = styled.ul``;
 const SkillCardItem = styled.li`
-  padding: 20px;
-  padding-top: 40px;
-  /* width: 26%; */
-  max-width: 338px;
-  width: 100%;
+  padding: 62px 20px 40px;
+  max-width: 380px;
   min-height: 338px;
+  text-align: center;
   color: rgba(255, 255, 255, 1);
 `;
-const SkillCardIcon = styled.span`
+const SkillCardIcon = styled.div`
   position: relative;
-  display: inline-block;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
+  /* margin-bottom: 40px; */
   width: 80px;
   height: 80px;
-  svg {
-    /* transform: translate(3px, 8px); */
-  }
+
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.1);
-    transform: rotate(-45deg) translateY(-14px) translateX(13px);
+    transform: rotate(-45deg) translate(-50%, -50%);
+    transform-origin: top left;
   }
 `;
 const SkillCardTitle = styled.h3`
   margin-bottom: 15px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 16px;
-  letter-spacing: 1px;
   text-transform: uppercase;
 `;
 const SkillCardText = styled.p`
-  font-size: 14px;
-  font-weight: 400;
   line-height: 21px;
   text-align: center;
 `;

@@ -19,4 +19,5 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   column-gap: ${(props) => props.columnGap};
   row-gap: ${(props) => props.rowGap};
   gap: ${(props) => props.gap};
+  height: 100%;
 `;

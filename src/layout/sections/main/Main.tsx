@@ -2,18 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import ImagePath from '../../../assets/images/main-img.webp';
 import { FlexWrapper } from '../../../components/FlexWrapper';
+import { Container } from '../../../components/Container';
+import { myTheme } from '../../../styles/Theme.styled';
 
 export function Main() {
   return (
-    <FlexWrapper as={MainSection} justify="space-around" wrap="wrap">
-      <MainTitleBox>
-        <MainText>Hi There</MainText>
-        <MainName>I am Svetlana Dyablo</MainName>
-        <MainTitle>A Web Developer. </MainTitle>
-      </MainTitleBox>
-      <PhotoWrapper>
-        <Photo src={ImagePath} alt="Main photo" />
-      </PhotoWrapper>
+    <FlexWrapper as={MainSection}>
+      <FlexWrapper as={Container} justify="space-around" wrap="wrap">
+        <MainTitleBox>
+          <MainText>Hi There</MainText>
+          <MainName>
+            I am <span>Svetlana Dyablo</span>
+          </MainName>
+          <MainTitle>A Web Developer. </MainTitle>
+        </MainTitleBox>
+        <PhotoWrapper>
+          <Photo src={ImagePath} alt="Main photo" />
+        </PhotoWrapper>
+      </FlexWrapper>
     </FlexWrapper>
   );
 }
@@ -24,7 +30,7 @@ const MainSection = styled.section`
   background-color: rgba(31, 31, 32, 1);
 `;
 const MainTitleBox = styled.div`
-  max-width: 563px;
+  max-width: 565px;
   color: rgba(255, 255, 255, 1);
   font-weight: 400;
   text-align: start;
@@ -39,21 +45,25 @@ const MainTitle = styled.h1`
 const MainName = styled.h2`
   position: relative;
   margin-bottom: 10px;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 50px;
   font-weight: 700;
   line-height: 50px;
   letter-spacing: 0.05em;
   z-index: 10;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 38px;
-    right: 0;
-    width: 426px;
-    height: 20px;
-    background-color: rgba(117, 114, 213, 1);
-    z-index: -1;
+  span {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 20px;
+      background-color: ${myTheme.colors.accent};
+      z-index: -1;
+    }
   }
 `;
 
@@ -74,7 +84,7 @@ const PhotoWrapper = styled.div`
     height: 470px;
     top: -19px;
     left: 29px;
-    border: 5px solid rgba(117, 114, 213, 1);
+    border: 5px solid ${myTheme.colors.accent};
     z-index: -1;
   }
 `;

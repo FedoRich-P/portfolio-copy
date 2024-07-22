@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FlexWrapper } from '../FlexWrapper';
+import { Link } from '../link/Link';
 
 type MenuPropsType = {
   arr: Array<string>;
@@ -14,7 +15,9 @@ export function Menu(props: MenuPropsType) {
           {props.arr.map((el, i) => {
             return (
               <li key={i}>
-                <a href="#">{el}</a>
+                <Link $tt="uppercase" href="#">
+                  {el}
+                </Link>
               </li>
             );
           })}
@@ -24,25 +27,4 @@ export function Menu(props: MenuPropsType) {
   );
 }
 
-const StyledList = styled.ul`
-  list-style: none;
-
-  a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 55px;
-    color: rgba(117, 114, 213, 1);
-    transition: color 0.3s ease, border-color 0.5s ease;
-    border-bottom: 1px solid transparent;
-
-    &:hover {
-      border-color: currentColor;
-      color: rgba(255, 255, 255, 1);
-    }
-  }
-`;
+const StyledList = styled.ul``;

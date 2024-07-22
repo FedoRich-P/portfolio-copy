@@ -3,6 +3,7 @@ import { SectionTitle } from '../../../components/Title/SectionTitle';
 import styled from 'styled-components';
 import { SkillCard } from '../../../components/skillCard/SkillCard';
 import { FlexWrapper } from '../../../components/FlexWrapper';
+import { Container } from '../../../components/Container';
 
 const CardsIconArray = [
   'html',
@@ -23,18 +24,16 @@ const CardsTitleArray = [
 
 export function Skills() {
   return (
-    <FlexWrapper as={SkillsSection} direction="column" align="center">
-      <SectionTitle>My Skills</SectionTitle>
-      <SkillCard
-        iconArray={CardsIconArray}
-        titleArray={CardsTitleArray}
-      ></SkillCard>
-    </FlexWrapper>
+    <SkillsSection>
+      <Container as={FlexWrapper} direction="column">
+        <SectionTitle>My Skills</SectionTitle>
+        <SkillCard
+          iconArray={CardsIconArray}
+          titleArray={CardsTitleArray}
+        ></SkillCard>
+      </Container>
+    </SkillsSection>
   );
 }
 
-const SkillsSection = styled.section`
-  padding: 100px 30px;
-  text-align: center;
-  background-color: rgba(37, 37, 39, 1);
-`;
+const SkillsSection = styled.section``;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
+import { Link } from '../../../../components/link/Link';
 
 type WorkPropsType = {
   title: string;
@@ -15,8 +16,8 @@ export function Work(props: WorkPropsType) {
       <WorkDescr>
         <WorkTitle>{props.title}</WorkTitle>
         <WorkText>{props.text}</WorkText>
-        <WorkLink>demo</WorkLink>
-        <WorkLink>Code</WorkLink>
+        <Link $tt="uppercase">demo</Link>
+        <Link $tt="uppercase">Code</Link>
       </WorkDescr>
     </FlexWrapper>
   );
@@ -47,28 +48,4 @@ const WorkText = styled.p`
   margin-bottom: 10px;
 `;
 
-const WorkLink = styled.a`
-  position: relative;
-  padding: 0 2px;
-  display: inline-block;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  z-index: 10;
-
-  &:active {
-    &::after {
-      content: '';
-      position: absolute;
-      top: 60%;
-      right: 0;
-      height: 10px;
-      width: 100%;
-      background-color: rgba(117, 114, 213, 1);
-      z-index: -1;
-    }
-  }
-`;
+const WorkLink = styled.a``;
