@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '../icon/Icon';
 import { FlexWrapper } from '../FlexWrapper';
+import { IconWrapper } from '../icon/IconWrapper';
 
 type SkillCardPropsType = {
   iconArray: Array<string>;
@@ -13,9 +14,9 @@ export function SkillCard(props: SkillCardPropsType) {
     <FlexWrapper as={SkillCardList} wrap="wrap">
       {props.iconArray.map((el, i) => (
         <SkillCardItem key={i}>
-          <SkillCardIcon as={FlexWrapper}>
+          <IconWrapper as={FlexWrapper}>
             <Icon iconId={el}></Icon>
-          </SkillCardIcon>
+          </IconWrapper>
           <SkillCardTitle>{props.titleArray[i]}</SkillCardTitle>
           <SkillCardText>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -35,25 +36,24 @@ const SkillCardItem = styled.li`
   text-align: center;
   color: rgba(255, 255, 255, 1);
 `;
-const SkillCardIcon = styled.div`
-  position: relative;
-  margin: 0 auto 40px;
-  /* margin-bottom: 40px; */
-  width: 80px;
-  height: 80px;
+// const SkillCardIcon = styled.div`
+//   position: relative;
+//   margin: 0 auto 40px;
+//   width: 80px;
+//   height: 80px;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: rotate(-45deg) translate(-50%, -50%);
-    transform-origin: top left;
-  }
-`;
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(255, 255, 255, 0.1);
+//     transform: rotate(-45deg) translate(-50%, -50%);
+//     transform-origin: top left;
+//   }
+// `;
 const SkillCardTitle = styled.h3`
   margin-bottom: 15px;
   text-transform: uppercase;

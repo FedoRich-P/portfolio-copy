@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FlexWrapper } from '../FlexWrapper';
+import { myTheme } from '../../styles/Theme.styled';
 
 export function Slider() {
   return (
@@ -15,8 +16,7 @@ export function Slider() {
       </Slide>
       <Pagination>
         <span></span>
-        <span></span>
-        <span></span>
+        <span className="active"></span>
         <span></span>
       </Pagination>
     </FlexWrapper>
@@ -40,7 +40,7 @@ const SlideText = styled.p`
 const SlideName = styled.span`
   display: inline-block;
   margin-bottom: 35px;
-  font-family: Josefin Sans;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
@@ -55,6 +55,12 @@ const Pagination = styled.div`
     height: 7px;
     border-radius: 100%;
     background-color: rgba(255, 255, 255, 0.5);
+
+    &.active {
+      width: 20px;
+      background-color: ${myTheme.colors.accent};
+      border-radius: 20px;
+    }
   }
 
   span + span {

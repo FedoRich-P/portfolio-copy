@@ -13,7 +13,5 @@ export function Slogan() {
 }
 
 const SloganSection = styled.section`
-  padding: 100px 25px;
   text-align: center;
-  background-color: rgba(37, 37, 39, 1);
 `;

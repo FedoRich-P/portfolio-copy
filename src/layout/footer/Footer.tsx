@@ -1,37 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '../../components/icon/Icon';
+import { FlexWrapper } from '../../components/FlexWrapper';
+import { myTheme } from '../../styles/Theme.styled';
 
 const iconsArr = ['instagram', 'telegram', 'vk', 'linkedin'];
-
-// let iconsArr = ['instagram', 'telegram', 'vk', 'linkedin'].map((el, i) => {
-//   return (
-//     <Icon iconId={el} key={i} width="21" height="21" viewBox="0 0 21 21" />
-//   );
-// });
-
-/* <Menu arr={iconsArr}></Menu> */
 
 export function Footer() {
   return (
     <FooterSection>
       <FooterTitle>Svetlana</FooterTitle>
-      <FooterList>
+      <FlexWrapper as={FooterList} columnGap="20px">
         {iconsArr.map((el, i) => {
           return (
             <FooterItem key={i}>
-              <FooterLink>
+              <FlexWrapper as={FooterLink}>
                 <Icon
                   iconId={el}
                   height="21"
                   width="21"
                   viewBox="0 0 21 21"
                 ></Icon>
-              </FooterLink>
+              </FlexWrapper>
             </FooterItem>
           );
         })}
-      </FooterList>
+      </FlexWrapper>
       <FooterText>© 2023 Svetlana Dyablo, All Rights Reserved.</FooterText>
     </FooterSection>
   );
@@ -45,7 +39,7 @@ const FooterSection = styled.footer`
 
 const FooterTitle = styled.h2`
   margin-bottom: 26px;
-  font-family: Josefin Sans;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 22px;
   font-weight: 700;
   line-height: 22px;
@@ -54,31 +48,29 @@ const FooterTitle = styled.h2`
 `;
 
 const FooterList = styled.ul`
-  display: flex;
-  justify-content: center;
   margin-bottom: 30px;
-  column-gap: 20px;
 `;
 const FooterItem = styled.li``;
 
 const FooterLink = styled.a`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   width: 35px;
   height: 35px;
-  line-height: 35px;
   border-radius: 100%;
+  color: ${myTheme.colors.accent};
   background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color 0.4s ease, fill 0.4s ease;
+  transition: background-color 0.4s ease, fill 0.4s ease,
+    transform 0.3s ease-in-out;
+  cursor: pointer;
 
   svg {
-    fill: #7572d5;
+    fill: currentColor;
+    transition: fill 0.3s ease-in-out;
   }
 
   &:hover {
     border-color: transparent;
-    background-color: rgba(117, 114, 213, 1);
+    background-color: ${myTheme.colors.accent};
+    transform: translateY(-2px);
 
     svg {
       fill: rgba(31, 31, 32, 1);
@@ -92,5 +84,5 @@ const FooterText = styled.span`
   font-weight: 400;
   line-height: 18px;
   text-align: center;
-  color: rgba(255, 255, 255, 1);
+  opacity: 0.5;
 `;

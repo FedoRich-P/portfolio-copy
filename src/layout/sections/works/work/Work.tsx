@@ -47,5 +47,3 @@ const WorkTitle = styled.h3`
 const WorkText = styled.p`
   margin-bottom: 10px;
 `;
-
-const WorkLink = styled.a``;
